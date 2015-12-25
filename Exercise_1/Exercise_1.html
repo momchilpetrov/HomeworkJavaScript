@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Exercise 1</title>
+	</head>		
+	<body>
+		<h1 id="result"></h1>
+	</body>	
+	<script type="text/javascript">	
+		var array = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];	
+		var countArray = [];
+		var times = 0; 
+		var result;
+		
+		for(var key in array) {
+			countArray[array[key]] = (countArray[array[key]] || 0) + 1;
+		        if (countArray[array[key]] > times) { 
+		                times = countArray[array[key]]; 
+		                result = array[key];
+		        }
+		}
+		
+		document.getElementById('result').innerHTML = result + ' : ' + times + ' times!';
+		console.log(result, times);		
+	</script>	
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Exercise 10</title>
+	</head>
+	<style> 
+		* {
+			padding: 5px;
+		}
+	</style>
+	<body>
+		<form action="" method="get" id="form" onsubmit="return formSubmit(this)" >
+					<div>
+						<label for="first_name">First name:</label>
+						<input type="text" id="first_name" name="first_name">
+					</div>
+					<p id='first'></p>
+					<div>
+						<label for="last_name">Last name:</label>
+						<input type="text" id="last_name" name="last_name">
+					</div>
+					<p id='second'></p>
+					<div>
+						<label for="birth_date">Birth date:</label>
+						<input type="date" id="birth_date" name="date_birth">
+					</div>
+					<p id='third'></p>
+					<div>
+						<label for="adress">Adress:</label>
+						<input type="text" id="adress" name="adress">
+					</div>
+					<p id='fourth'></p>					
+					<div>
+						<label for="country">Country:</label>
+						<select id="country" name="country">
+							<option value="1">Bulgaria</option>
+							<option value="2">Greece</option>
+							<option value="3">Romania</option>
+						</select>
+				    </div>
+				    <div>
+						<button type="button" id='btn2'>Other country</button>
+					</div>
+					<div id='div_btn'>
+						<button type="submit" id='btn'>Submit</button>
+					</div>
+				</form>
+	</body>
+	<script type="text/javascript">
+		document.getElementById('btn2').addEventListener('click', function() {
+			var input = document.createElement("input");
+			var btn = document.getElementById('div_btn')
+			input.type = "text";
+			document.getElementById('form').insertBefore(input, btn);
+		}, false)
+	
+		function formSubmit(form){		
+			var error = false;
+			if (form.country.value == 4) {
+				var input = document.createElement("input");
+				input.type = "text";
+				input.id = "new_input"
+				document.getElementById('form').appendChild(newElement);
+			}
+			
+			if (form.first_name.value.length == 0) {
+				document.getElementById('first').innerHTML = 'Please, fill the form!';
+				form.first_name.style.backgroundColor = 'red';
+				error = true;
+			}
+			
+			if (form.last_name.value.length == 0) {
+				document.getElementById('second').innerHTML = 'Please, fill the form!';
+				form.last_name.style.backgroundColor = 'red';
+				error = true;
+			}
+			
+			if (form.birth_date.value.length == 0) {
+				document.getElementById('third').innerHTML = 'Please, fill the form!';
+				form.birth_date.style.backgroundColor = 'red';
+				error = true;
+			}
+			
+			if (form.adress.value.length == 0) {
+				document.getElementById('fourth').innerHTML = 'Please, fill the form!';
+				form.adress.style.backgroundColor = 'red';
+				error = true;
+			}
+									
+			if (error === false) {
+				return true;
+			}
+			
+			return false;
+			
+			
+		}
+	 
+	</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Exercise_5</title>
+		<style>
+			label, input {
+			margin: 10px;}
+		</style>
+		<script type="text/javascript">
+		
+			window.addEventListener('load', function() {
+				document.getElementById('btn').addEventListener('click', function() {
+					var radius = form.math_radius.value;
+					var volume = (4/3)*3.14*Math.pow(parseFloat(radius),3);
+					document.getElementById('result').innerHTML = volume;
+				}, false)
+			}, false)
+		</script>
+	</head>
+	<body>
+		<form id="form">
+			<div>
+				<label for="radius">Radius&nbsp;</label>
+				<input type="text" id="radius" name="math_radius">
+			</div>
+			<div>
+				<button type="button" id="btn">Calculate</button>
+			</div>
+		</form>
+		<h1 id="result"></h1>
+	</body>
+</html>

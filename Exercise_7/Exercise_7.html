@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Exercise 7</title>
+		<style>
+			form {
+			display: inline-block;
+			clear: both;
+			width: 700px;
+			}
+						
+			div {
+				float: left;
+				margin-top: 20px;
+			}
+			
+			#text {
+				width: 40%;
+			}
+			
+			.smaller {
+				width: 20%;
+			}		
+		</style>
+		<script type="text/javascript">	
+			window.addEventListener('load', function() {
+				document.getElementById('btn').addEventListener('click', function() {
+					var input = form.math_convert.value;
+					var result;
+					if (form.from.value == '1' && form.to.value == '2') {
+						result = parseInt(input) * 2.20462262;	
+					} else if (form.from.value == '2' && form.to.value == '1') {
+						result = parseInt(input) / 2.20462262;
+					} else {
+						result = input;
+					}	
+					document.getElementById('result').innerHTML = result;
+				}, false)
+			}, false)
+		</script>
+	</head>
+	<body>
+		<form id="form">
+			<div id="text">
+				<label for="convert">Convert&nbsp;</label>
+				<input type="text" id="convert" name="math_convert">
+			</div>
+			<div class="smaller">
+				<label for="first_sel">From:</label>
+				<select id="first_sel" name="from">
+					<option value="1">kg</option>
+					<option value="2">lb</option>
+				</select>
+			</div>
+			<div class="smaller">
+				<label for="second_sel">To:</label>
+				<select id="second_sel" name="to">
+					<option value="1">kg</option>
+					<option value="2">lb</option>
+				</select>
+			</div>				    
+			<div class="smaller">
+				<button type="button" id="btn">Calculate</button>
+			</div>			
+		</form>
+		<h1 id="result"></h1>
+	</body>
+</html>

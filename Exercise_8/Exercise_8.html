@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			caption {
+				font-size: 30px;
+			}
+
+			table {
+				width: 400px;
+				height: 300px;
+				font-size: 2em;
+				border: 1px solid gray;	
+				background-color: #deb887;	
+			}
+			
+			th, td {
+				border:1px solid gray;
+			}
+		</style>
+		<script type="text/javascript">
+			window.addEventListener('load', function() {
+				var body = document.getElementById('body');
+				var row = document.createElement('tr');
+				body.appendChild(row);
+				var data = document.createElement('td');
+				row.appendChild(data);
+				var data1 = document.createElement('td');
+				row.appendChild(data1);
+				data.innerHTML = "new col";
+				data1.innerHTML = "new col";
+			}, false)
+		</script>
+	</head>
+	<body>
+		<table>
+			<caption>Example</caption>
+			<thead>
+				<tr>
+					<th>Col</th>
+					<th>Col</th>
+				</tr>	
+			</thead>
+			<tbody id="body">
+				<tr>
+					<td>content</td>
+					<td>content</td>
+				</tr>
+				<tr>
+					<td>content</td>
+					<td>content</td>
+				</tr>
+			</tbody>
+		</table>			
+	</body>
+</html>

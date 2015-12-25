@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Exercise_6</title>
+		<script type="text/javascript">
+			var images = [
+			              'Images/transf_img_1.jpg',
+			              'Images/transf_img_2.jpg',
+			              'Images/transf_img_3.jpg',
+			              'Images/transf_img_4.jpg',
+			              'Images/transf_img_5.jpg',
+			              'Images/transf_img_6.jpg',
+			              'Images/transf_img_7.jpg',
+			              'Images/transf_img_8.jpg',
+			              'Images/transf_img_9.jpg',
+			              'Images/transf_img_10.jpg',
+			              'Images/transf_img_11.jpg',
+			              'Images/transf_img_12.jpg'
+			              ];
+			
+			window.addEventListener('load', function() {
+				images.sort (function() {
+					return Math.random() - Math.random();
+				})
+				var result = images[0];
+				document.getElementById("image").src = result;
+			}, false)
+		</script>
+	</head>
+	<body>
+		<img id="image">
+	</body>
+</html>

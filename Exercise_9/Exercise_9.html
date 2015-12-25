@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Exercise 9</title>
+	</head>
+	<style>
+		img {
+			width: 150px;
+			height: 100px;
+			margin: 25px;
+		}
+	</style>
+	<script type="text/javascript">
+			window.addEventListener('load', function() {
+				var images = document.getElementsByTagName('img');
+				for (var i = 0; i < images.length; i++) {
+					images[i].addEventListener('mouseenter', function() {
+						this.style.height ='250px';
+						this.style.width ='300px';
+					}, false)
+				}
+				for (var i = 0; i < images.length; i++) {
+					images[i].addEventListener('mouseleave', function() {
+						this.style.height ='100px';
+						this.style.width ='150px';
+					}, false)
+				}
+			}, false)
+		</script>
+	<body>
+		<div>
+			<img src="Images/transf_img_1.jpg">
+			<img src="Images/transf_img_2.jpg">
+			<img src="Images/transf_img_3.jpg">
+			<img src="Images/transf_img_4.jpg">
+			<img src="Images/transf_img_5.jpg">
+			<img src="Images/transf_img_6.jpg">
+			<img src="Images/transf_img_7.jpg">
+			<img src="Images/transf_img_8.jpg">
+			<img src="Images/transf_img_9.jpg">
+			<img src="Images/transf_img_10.jpg">
+			<img src="Images/transf_img_11.jpg">
+			<img src="Images/transf_img_12.jpg">
+		</div>
+	</body>
+</html>
